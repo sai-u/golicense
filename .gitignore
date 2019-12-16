@@ -1,3 +1,5 @@
 golicense
 config.hcl
 dist/
+.gradle/
+.inner-build/

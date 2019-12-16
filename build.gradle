@@ -1,0 +1,57 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        dependencies {
+            classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+        }
+    }
+}
+
+plugins {
+    id "maven-publish"
+}
+
+apply plugin: "com.jfrog.artifactory"
+
+group "golicense"
+version "0.1"
+
+// Build the golicense binary on a host with go-1.13.
+// This produces the binary "golicense" in the current directory.
+task build(type: Exec) {
+    executable "go"
+    args "build"
+}
+
+// Build the golicense binary via a container that has go-1.13 already.
+// To be used on hosts that do not have go-1.13.
+task containerBuild(type: Exec) {
+    executable "docker"
+    args "run"
+    args "--rm"
+    args "-v"
+    args "${projectDir}:/opt/code/golicense"
+    args "--workdir"
+    args "/opt/code/golicense"
+    args "docker.artifactory.kaloom.io/flowfabric/build-go:1.13.4-9"
+    args "go"
+    args "build"
+}
+
+publishing {
+    publications {
+        binaries(MavenPublication) {
+            artifact source: "${projectDir}/golicense", extension: "bin"
+        }
+    }
+}
+
+artifactory {
+	publish {
+		defaults {
+			publications(publishing.publications.binaries)
+            publishPom = true
+		}
+	}
+}
