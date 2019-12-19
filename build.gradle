@@ -15,7 +15,7 @@ plugins {
 apply plugin: "com.jfrog.artifactory"
 
 group "golicense"
-version "0.1"
+version "0.2"
 
 // Build the golicense binary on a host with go-1.13.
 // This produces the binary "golicense" in the current directory.
@@ -34,7 +34,7 @@ task containerBuild(type: Exec) {
     args "${projectDir}:/opt/code/golicense"
     args "--workdir"
     args "/opt/code/golicense"
-    args "docker.artifactory.kaloom.io/flowfabric/build-go:1.13.4-9"
+    args "mill.jfrog.info:12009/docker/flowfabric/build-go:1.13.4-9"
     args "go"
     args "build"
 }
@@ -42,7 +42,7 @@ task containerBuild(type: Exec) {
 publishing {
     publications {
         binaries(MavenPublication) {
-            artifact source: "${projectDir}/golicense", extension: "bin"
+            artifact source: "${projectDir}/golicense", extension: "jar"
         }
     }
 }
