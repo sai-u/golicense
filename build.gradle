@@ -48,6 +48,7 @@ task build(type: Exec) {
 //    args "rt"
 //    args "go"
 //    args "build"
+//    args "go"
 //    args "--build-name=golicense"
 //    args "--build-number=10"
     executable "go"
