@@ -46,8 +46,8 @@ task build(type: Exec) {
     args "rt"
     args "go"
     args "build"
-    args "--build-name=kaloom-cli"
-    args "--build-number=1"
+    args "--build-name=golicense"
+    args "--build-number=10"
    // executable "go"
     //args "build"
 }
@@ -59,8 +59,8 @@ task publish(type: Exec) {
     args "go"
     args "build"
     args "--deps=ALL"
-    args "--build-name=kaloom-cli"
-    args "--build-number=1"
+    args "--build-name=golicense"
+    args "--build-number=10"
    // executable "go" jfrog rt gp go-virtual v1.2.3 --deps=ALL --build-name=my-build-name --build-number=1
     //args "build"
 }
@@ -69,8 +69,8 @@ task bp(type: Exec){
     executable "jfrog"
     args "rt"
     args "bp"
-    args "kaloom-cli"
-    args "1"
+    args "golicense"
+    args "10"
 }
 // Build the golicense binary via a container that has go-1.13 already.
 // To be used on hosts that do not have go-1.13.
