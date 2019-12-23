@@ -30,8 +30,10 @@ task gobuild(type: Exec) {
 }
 
 task gobuildexport(type: Exec) {
-    executable "export"
-    args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/goto"
+    environment "GOPROXY", "http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/goto"
+    //commandLine "doit"
+    //executable "export"
+    //args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
 }
 
 //task gobuildexport(type: Exec) {
