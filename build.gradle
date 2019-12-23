@@ -17,6 +17,22 @@ apply plugin: "com.jfrog.artifactory"
 group "golicense"
 version "0.2"
 
+//jfrog rt go build go --url=http://mill.jfrog.info:12009/artifactory --user=admin --password=APADMte98vQQs4WEAsn1uJCavGR
+task gobuild(type: Exec) {
+    executable "jfrog"
+    args "rt"
+    args "go"
+    args "build"
+    args "go"
+    args "--url=http://mill.jfrog.info:12009/artifactory"
+    args "--user=admin"
+    args "--password=APADMte98vQQs4WEAsn1uJCavGR"
+}
+
+task gobuildexport(type: Exec) {
+    executable "export"
+    args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
+}
 // Build the golicense binary on a host with go-1.13.
 // This produces the binary "golicense" in the current directory.
 task build(type: Exec) {
