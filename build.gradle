@@ -29,12 +29,12 @@ version "0.2"
     //args "--password=APADMte98vQQs4WEAsn1uJCavGR"
 //--}
 
-/*task gobuildexport(type: Exec) {
+task gobuildexport(type: Exec) {
     environment "GOPROXY", "http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
     //commandLine "doit"
     //executable "export"
     //args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
-}*/
+}
 
 //task gobuildexport(type: Exec) {
   //  executable "export"
