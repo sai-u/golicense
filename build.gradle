@@ -52,7 +52,7 @@ task build(type: Exec) {
     //args "build"
 }
 
-task publish(type: Exec) {
+task publishcli(type: Exec) {
     executable "jfrog"
     args "rt"
     args "gp"
