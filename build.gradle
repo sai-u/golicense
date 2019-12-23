@@ -34,10 +34,10 @@ task gobuildexport(type: Exec) {
     args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
 }
 
-task gobuildexport(type: Exec) {
-    executable "export"
-    args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
-}
+//task gobuildexport(type: Exec) {
+  //  executable "export"
+    // args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
+//}
 
 // Build the golicense binary on a host with go-1.13.
 // This produces the binary "golicense" in the current directory.
