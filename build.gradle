@@ -48,9 +48,9 @@ task build(type: Exec) {
     args "rt"
     args "go"
     args "build"
-    args "go"
+//    args "go"
     args "--build-name=golicense"
-    args "--build-number=39"
+    args "--build-number=40"
     executable "echo"
     args "projectDir: ${projectDir}"
 }
@@ -60,10 +60,10 @@ task publishcli(type: Exec) {
     args "rt"
     args "gp"
     args "go"
-    args "build"
+    args "v1.13.0"
     args "--deps=ALL"
     args "--build-name=golicense"
-    args "--build-number=39"
+    args "--build-number=40"
    // executable "go" jfrog rt gp go-virtual v1.2.3 --deps=ALL --build-name=my-build-name --build-number=1
     //args "build"
 }
@@ -73,7 +73,7 @@ task bp(type: Exec){
     args "rt"
     args "bp"
     args "golicense"
-    args "39"
+    args "40"
 }
 // Build the golicense binary via a container that has go-1.13 already.
 // To be used on hosts that do not have go-1.13.
