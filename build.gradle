@@ -75,3 +75,20 @@ task containerBuild(type: Exec) {
     args "build"
 }
 
+publishing {
+    publications {
+        binaries(MavenPublication) {
+            artifact source: "${projectDir}/golicense", extension: "zip"
+        }
+    }
+}
+
+artifactory {
+	publish {
+		defaults {
+			publications(publishing.publications.binaries)
+            publishPom = false
+		}
+	}
+}
+
