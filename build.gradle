@@ -29,12 +29,12 @@ version "0.2"
     //args "--password=APADMte98vQQs4WEAsn1uJCavGR"
 //--}
 
-task gobuildexport(type: Exec) {
-    environment "GOPROXY", "http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
+//task gobuildexport(type: Exec) {
+    //environment "GOPROXY", "http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
     //commandLine "doit"
     //executable "export"
     //args "GOPROXY=http://admin:APADMte98vQQs4WEAsn1uJCavGR@mill.jfrog.info:12009/artifactory/api/go/go"
-}
+//}
 
 //task gobuildexport(type: Exec) {
   //  executable "export"
@@ -44,18 +44,18 @@ task gobuildexport(type: Exec) {
 // Build the golicense binary on a host with go-1.13.
 // This produces the binary "golicense" in the current directory.
 task build(type: Exec) {
-//    executable "jfrog"
-//    args "rt"
-//    args "go"
-//    args "build"
-//    args "go"
-//    args "--build-name=golicense"
-//    args "--build-number=10"
-    executable "go"
+    executable "jfrog"
+    args "rt"
+    args "go"
     args "build"
+    args "go"
+    args "--build-name=golicense"
+    args "--build-number=35"
+//    executable "go"
+//    args "build"
 }
 
-/*task publishcli(type: Exec) {
+task publishcli(type: Exec) {
     executable "jfrog"
     args "rt"
     args "gp"
@@ -63,7 +63,7 @@ task build(type: Exec) {
     args "build"
     args "--deps=ALL"
     args "--build-name=golicense"
-    args "--build-number=10"
+    args "--build-number=35"
    // executable "go" jfrog rt gp go-virtual v1.2.3 --deps=ALL --build-name=my-build-name --build-number=1
     //args "build"
 }
@@ -73,8 +73,8 @@ task bp(type: Exec){
     args "rt"
     args "bp"
     args "golicense"
-    args "10"
-}*/
+    args "35"
+}
 // Build the golicense binary via a container that has go-1.13 already.
 // To be used on hosts that do not have go-1.13.
 task containerBuild(type: Exec) {
