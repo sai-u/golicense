@@ -45,7 +45,7 @@ task publishcli(type: Exec) {
     executable "jfrog"
     args "rt"
     args "gp"
-    args "go"
+    args "kaloom"
     args "v1.13.0"
     args "--deps=ALL"
     args "--build-name=golicense"
@@ -75,19 +75,3 @@ task containerBuild(type: Exec) {
     args "build"
 }
 
-publishing {
-    publications {
-        binaries(MavenPublication) {
-            artifact source: "${projectDir}/golicense", extension: "zip"
-        }
-    }
-}
-
-artifactory {
-	publish {
-		defaults {
-			publications(publishing.publications.binaries)
-            publishPom = false
-		}
-	}
-}
