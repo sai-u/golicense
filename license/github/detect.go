@@ -7,8 +7,8 @@ import (
 	"github.com/google/go-github/v18/github"
 	"github.com/mitchellh/go-spdx"
 	"github.com/mitchellh/golicense/license"
-// 	"gopkg.in/src-d/go-license-detector.v2/licensedb"
-// 	"gopkg.in/src-d/go-license-detector.v2/licensedb/filer"
+	"gopkg.in/src-d/go-license-detector.v2/licensedb"
+	"gopkg.in/src-d/go-license-detector.v2/licensedb/filer"
 )
 
 // detect uses go-license-detector as a fallback.
