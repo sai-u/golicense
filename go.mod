@@ -1,4 +1,4 @@
-module golicense/saiu/golicense
+module github.com/mitchellh/golicense
 
 go 1.13
 
