@@ -35,11 +35,11 @@ task build(type: Exec) {
 //    executable "jfrog"
 //    args "rt"
 //    args "go"
-	executable "jfrog"
+	executable "go"
     	args "build"
 //    args "go"
-//    args "--build-name=golicense"
-//    args "--build-number=56"
+    args "--build-name=golicense"
+    args "--build-number=56"
 }
 
 task publishcli(type: Exec) {
