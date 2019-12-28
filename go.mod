@@ -1,6 +1,6 @@
 module github.com/mitchellh/golicense
 
-go 1.13
+go 1.11
 
 require (
 	github.com/360EntSecGroup-Skylar/excelize v1.4.0
