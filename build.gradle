@@ -32,14 +32,14 @@ version "0.3"
 // Build the golicense binary on a host with go-1.13.
 // This produces the binary "golicense" in the current directory.
 task build(type: Exec) {
-//    executable "jfrog"
-//    args "rt"
+    executable "jfrog"
+    args "rt"
+    args "go"
+//	executable "go"
+    args "build"
 //    args "go"
-	executable "go"
-    	args "build"
-//    args "go"
-//    args "--build-name=golicense"
-//    args "--build-number=56"
+    args "--build-name=golicense"
+    args "--build-number=72"
 }
 
 task publishcli(type: Exec) {
@@ -50,7 +50,7 @@ task publishcli(type: Exec) {
     args "v1.13.0"
     args "--deps=ALL"
     args "--build-name=golicense"
-    args "--build-number=56"
+    args "--build-number=72"
 
 }
 
@@ -59,7 +59,7 @@ task bp(type: Exec){
     args "rt"
     args "bp"
     args "golicense"
-    args "56"
+    args "72"
 }
 // Build the golicense binary via a container that has go-1.13 already.
 // To be used on hosts that do not have go-1.13.
