@@ -50,6 +50,7 @@ require (
 	gopkg.in/src-d/go-billy.v4 v4.3.0 // indirect
 	gopkg.in/src-d/go-git-fixtures.v3 v3.5.0 // indirect
 	gopkg.in/src-d/go-git.v4 v4.7.0 // indirect
+	gopkg.in/src-d/go-license-detector.v2 v2.0.0-20180510072912-da552ecf050b
 	gopkg.in/src-d/go-siva.v1 v1.3.0 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )
