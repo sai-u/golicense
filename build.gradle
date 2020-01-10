@@ -79,7 +79,8 @@ task containerBuild(type: Exec) {
 publishing {
     publications {
         binaries(MavenPublication) {
-            artifact source: "${projectDir}/abc-manifest.json"
+            artifact source: "${projectDir}/abc-manifest.json",
+	    artifact source: "${projectDir}/guava-27.0.1-jre.jar"
         }
     }
 }
