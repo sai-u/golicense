@@ -79,7 +79,7 @@ task containerBuild(type: Exec) {
 publishing {
     publications {
         binaries(MavenPublication) {
-            artifact source: "${projectDir}/golicense", extension: "zip"
+            artifact source: "${projectDir}", extension: "zip"
         }
     }
 }
