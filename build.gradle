@@ -15,7 +15,7 @@ plugins {
 apply plugin: "com.jfrog.artifactory"
 
 group "golicense"
-version "0.3-manifest"
+version "0.4-manifest"
 
 //jfrog rt go build go --url=http://mill.jfrog.info:12009/artifactory --user=admin --password=APADMte98vQQs4WEAsn1uJCavGR
 //--task gobuild(type: Exec) {
