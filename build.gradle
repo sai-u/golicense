@@ -15,7 +15,9 @@ plugins {
 apply plugin: "com.jfrog.artifactory"
 
 group "golicense"
-version "0.5-manifest"
+version "0.5"
+
+//version "0.5-manifest"
 
 //jfrog rt go build go --url=http://mill.jfrog.info:12009/artifactory --user=admin --password=APADMte98vQQs4WEAsn1uJCavGR
 //--task gobuild(type: Exec) {
@@ -79,7 +81,7 @@ task containerBuild(type: Exec) {
 publishing {
     publications {
         binaries(MavenPublication) {
-            artifact source: "${projectDir}/abc-manifest.json"
+            //artifact source: "${projectDir}/abc-manifest.json"
 	    artifact source: "${projectDir}/guava-27.0.1-jre.jar"
         }
     }
